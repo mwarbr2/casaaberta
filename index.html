@@ -1,1 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Realidade Aumentada - Espaço Instagramável Casa Aberta 2019 </title>
 
+		<meta charset="utf-8">
+
+		<!-- Colocamos o Framework A-Frame que será responsável por inserir os objetos na cena -->
+		<script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
+
+		<!-- Colocamos o Framework AR.js que será responsável por reconhecer o marcador onde o objeto será inserido -->
+		<script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
+
+	</head>
+	<body style="margin: 0; overflow: hidden;">
+    
+    <!-- add arjs into your scene -->
+<a-scene arjs>
+        <!-- define a marker -->
+        <a-anchor>
+                <!-- define the content to be displayed on top of the marker -->
+                <a-box color="#2EAFAC"></a-box>
+        </a-anchor>
+        <!-- define a simple camera -->
+        <a-camera-static/>
+</a-scene>
+
+  </body>
+  
+</html>
