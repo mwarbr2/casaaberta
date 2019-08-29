@@ -50,10 +50,18 @@
 		 <a-scene embedded arjs>
 
 		 	<!-- cria e posiciona um cubo sobre o marcador -->
-		 	<a-box position=" 0 0 0 " material="green"></a-box>
+		 	<a-box position=" 0 0.5 0 " material="green"></a-box>
 
-		 	<!-- chamada do código do marcador HIRO marcador padrão do AR.js -->
-		 	<a-marker preset="hiro"></a-marker>
+		 	<!-- chamada do código do marcador HIRO marcador padrão do AR.js 
+		 	<a-marker-camera preset="hiro"></a-marker-camera>-->
+			 
+			 <!-- define your markers -->
+<a-marker preset='hiro'>
+  <!-- here define the content to display on top of the marker -->
+  <a-box position='0 0.5 0' material='color: red;'></a-box>
+</a-marker>
+<!-- define a simple camera -->
+<a-entity camera></a-entity>
 
 		 </a-scene>
 	</body>
