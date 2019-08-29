@@ -46,23 +46,62 @@
 
 	</head>
 	<body style="margin: 0; overflow: hidden;">
-		<!-- tag não padrão do HTML onde nossa cena de RA será adicionada (todos os itens vão dentro dela) -->
-		 <a-scene embedded arjs>
+		<!-- tag não padrão do HTML onde nossa cena de RA será adicionada (todos os itens vão dentro dela) 
+		 <a-scene embedded arjs>-->
 
-		 	<!-- cria e posiciona um cubo sobre o marcador -->
-		 	<a-box position=" 0 0.5 0 " material="green"></a-box>
+		 	<!-- cria e posiciona um cubo sobre o marcador 
+		 	<a-box position=" 0 0.5 0 " material="green"></a-box>-->
 
 		 	<!-- chamada do código do marcador HIRO marcador padrão do AR.js 
 		 	<a-marker-camera preset="hiro"></a-marker-camera>-->
 			 
-			 <!-- define your markers -->
-<a-marker preset='hiro'>
-  <!-- here define the content to display on top of the marker -->
+			 <!-- define your markers 
+<a-marker preset='hiro'>-->
+  <!-- here define the content to display on top of the marker 
   <a-box position='0 0.5 0' material='color: red;'></a-box>
-</a-marker>
-<!-- define a simple camera -->
+</a-marker>-->
+<!-- define a simple camera 
 <a-entity camera></a-entity>
 
-		 </a-scene>
+		 </a-scene>-->
+		<a-scene embedded arjs="debugUIEnabled: false;">
+
+  <a-assets>
+    <a-asset-item id="drone" src="busterDrone/busterDrone.gltf"></a-asset-item>
+    <a-asset-item id="helmet" src="damagedHelmet/damagedHelmet.gltf"></a-asset-item>
+    <a-asset-item id="skull" src="skull_downloadable/scene.gltf"></a-asset-item>
+  </a-assets>
+
+
+    <a-marker-camera preset='hiro'>
+
+      <a-entity gltf-model-next="#drone"></a-entity>
+
+
+
+    </a-marker-camera>
+
+
+</a-scene>
 	</body>
 </html>
+
+<script src=”https://aframe.io/releases/0.6.1/aframe.min.js"></script>
+<script src=”https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
+
+<body style=’margin : 0px; overflow: hidden;’>
+  <a-scene embedded arjs=’sourceType: webcam;’>
+      <a-marker preset=’hiro’>
+        <!-- Adding an OBJ file to an AR Project-->
+        <a-entity 
+            obj-model=”obj: url(/path/to/nameOfFile.obj); 
+            mtl: url(/path/to/nameOfFile.mtl)”>
+        </a-entity>
+              
+      </a-marker>
+  <a-entity camera>
+  </a-entity>
+  </a-scene>
+</body>
+
+https://github.com/KhronosGroup/glTF-Sample-Models
